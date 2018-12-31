@@ -6,10 +6,16 @@
 // Time taken:
 // Known bugs:
 
+#include "Player.h"
+#include "Other.h"
 
 #include <stdio.h>
 #include <iostream>
 
+#include <SDL.h>
+
+class Player;
+class Other;
 
 class Game
 {
@@ -31,4 +37,6 @@ private:
 	SDL_Window *window;
 	SDL_Renderer *renderer;
 
+	Player * m_player;
+	Other * m_other;
 };

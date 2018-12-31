@@ -1,16 +1,17 @@
 //
-//
-//
-//
-//
-//
+// C00204076
+// Brandon Seah-Dempsey
+// Started at
+// Finished at
+// Time taken:
+// Known bugs:
 
 #include "Game.h"
 
 //
 Game::Game()
 {
-
+	m_player = new Player(15, 15, 20, 300, 0, 0, 255, 255);
 }
 
 //
@@ -71,15 +72,17 @@ void Game::handleEvents()
 //
 void Game::update()
 {
-
+	m_player->pollEvents();
 }
 
 //
 void Game::render()
 {
 	SDL_RenderClear(renderer);
+
 	// Drawing occurs here
-	
+	m_player->draw(renderer);
+
 	//
 
 	SDL_RenderPresent(renderer);
@@ -89,7 +92,7 @@ void Game::render()
 void Game::clean()
 {
 	SDL_DestroyWindow(window);
-	SDL_DestoryRenderer(renderer);
+	//SDL_DestoryRenderer(renderer);
 	SDL_Quit();
 	std::cout << "Game clened!" << std::endl;
 }
